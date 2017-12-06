@@ -15,28 +15,32 @@
 		fclose($myfile);
 		exec("javac LastJava.java");
 		exec("java LastJava");
-		echo $disease;
-		if ($disease== "lung"){
-			
+		// echo $disease;
+		if ($disease== 'lung'){
+			exec("\"C:\\Program Files\\MATLAB\\MATLAB Production Server\\R2015a\\bin\\matlab.exe\" -r \"run('C:\\xampp\\htdocs\\M21.m')\"");
 		}
 		else if($disease== "breast"){
-
+			exec("\"C:\\Program Files\\MATLAB\\MATLAB Production Server\\R2015a\\bin\\matlab.exe\" -r \"run('C:\\xampp\\htdocs\\M35.m')\"");
 		}
 		else if($disease== "collorectal"){
-
+			exec("\"C:\\Program Files\\MATLAB\\MATLAB Production Server\\R2015a\\bin\\matlab.exe\" -r \"run('C:\\xampp\\htdocs\\Simple.m')\"");
 		}
 		else{
-
+			exec("\"C:\\Program Files\\MATLAB\\MATLAB Production Server\\R2015a\\bin\\matlab.exe\" -r \"run('C:\\xampp\\htdocs\\M23.m')\"");
 		}
 		sleep(20);
 		// Print Saved results from file
 		$t= 20;
-		while (!file_get_contents('C:\Users\Vaibhav Srivastava\Desktop\Udaipur\Practice\result.txt')){
+		while (!file_exists('C:\\xampp\\htdocs\\result.txt')){
 			sleep($t);
 			$t= $t+10;
 		}
-		$c= file_get_contents('C:\Users\Vaibhav Srivastava\Desktop\Udaipur\Practice\result.txt');
-		echo "<h2 style= \"background-color: red; padding: 10%;\">" . $c. "</h2>";
+		$c= file_get_contents('C:\\xampp\\htdocs\\result.txt');
+		echo "<h2 style= \"background-color: red; padding: 10%;margin-left: 20%; margin-right: 20%; text-align: center;\">" . $c. "</h2>";
+		unlink('myfile.csv');
+		unlink('newfile.csv');
+		unlink('result.txt');
+		unlink('LastJava.class');
 		// $javafile= fopen("hello.java", "w") or die ("Unable to upen file!");
 			// exec("\"C:\\Program Files\\MATLAB\\MATLAB Production Server\\R2015a\\bin\\matlab.exe" -r \"run('C:\\Users\\Vaibhav Srivastava\\Desktop\\')\"");
 		// $javatxt= "import java.io.PrintWriter;\r\n
@@ -45,7 +49,7 @@
 
 	
 		// 			{\r\n
-
+// exec("\"C:\\Program Files\\MATLAB\\MATLAB Production Server\\R2015a\\bin\\matlab.exe" -r \"run('C:\\Users\\Vaibhav Srivastava\\Desktop\\')\"");
 	
 		// 			    public static void main(String args[]) throws Exception\r\n
 
