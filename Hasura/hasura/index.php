@@ -464,7 +464,7 @@ The results on the ability of our system to predict the type of cancer is estima
             <h1>find <span>disease</span></h1>
 			        </div>
         <div style= "background-color: #ff2e3d; width: 80%; margin: auto;">
-            <form action= "http://localhost:1234/upload_file.php" method= "post" enctype="multipart/form-data">
+            <form action= "upload_file.php" method= "post" enctype="multipart/form-data">
                 <div class= "container-fluid" style= "padding-top: 7%;">
                     <div class= "row">
                         <!-- <div class= "col-md-3 col-sm-3 col-lg-3 col-xs-3">
